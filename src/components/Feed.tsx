@@ -11,6 +11,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import SponsoredPost from "./SponsoredPost";
 
 const Feed = () => {
   const [newPost, setNewPost] = useState("");
@@ -19,58 +20,65 @@ const Feed = () => {
     {
       id: 1,
       author: {
-        name: "Marie Dubois",
-        avatar: "/placeholder-marie.jpg",
+        name: "Miora Rakoto",
+        avatar: "/placeholder-miora.jpg",
         verified: true,
       },
-      content: "Incroyable sunset à Santorini ! 🌅 Cette île grecque est vraiment magique. Qui a déjà visité les Cyclades ?",
-      image: "/placeholder-santorini.jpg",
-      location: "Santorini, Grèce",
+      content: "Magnifique coucher de soleil à l'Avenue des Baobabs ! 🌅 Madagascar regorge de paysages incroyables. Qui connaît d'autres spots photos magiques sur l'île ?",
+      image: "/placeholder-baobabs.jpg",
+      location: "Avenue des Baobabs, Morondava",
       time: "Il y a 2h",
-      likes: 24,
-      comments: 5,
-      shares: 2,
-      tags: ["#Grèce", "#Santorini", "#Sunset"],
+      likes: 34,
+      comments: 8,
+      shares: 5,
+      tags: ["#Madagascar", "#Baobabs", "#Morondava", "#Sunset"],
       liked: false,
       saved: false,
     },
     {
       id: 2,
       author: {
-        name: "Alex Martin",
-        avatar: "/placeholder-alex.jpg",
+        name: "Hery Andrianaivo",
+        avatar: "/placeholder-hery.jpg",
         verified: false,
       },
-      content: "Premier jour à Tokyo ! Street food incroyable dans le quartier de Shibuya 🍜 Quelqu'un connaît de bons spots pour les ramen ?",
-      image: "/placeholder-tokyo-food.jpg",
-      location: "Tokyo, Japon",
+      content: "Première plongée à Nosy Be ! Les tortues et les requins baleines étaient au rendez-vous 🐢🦈 Quelqu'un connaît de bons centres de plongée dans la région ?",
+      image: "/placeholder-nosybe-diving.jpg",
+      location: "Nosy Be, Madagascar",
       time: "Il y a 4h",
-      likes: 18,
-      comments: 12,
-      shares: 4,
-      tags: ["#Tokyo", "#Streetfood", "#Japon", "#Ramen"],
+      likes: 28,
+      comments: 15,
+      shares: 7,
+      tags: ["#NosyBe", "#Plongée", "#Madagascar", "#TortuesMarine"],
       liked: true,
       saved: true,
     },
-    {
-      id: 3,
-      author: {
-        name: "Sophie Chen",
-        avatar: "/placeholder-sophie.jpg",
-        verified: true,
-      },
-      content: "Road trip en Islande avec l'équipe ! Les paysages sont à couper le souffle ❄️ Aurora borealis cette nuit !",
-      image: "/placeholder-iceland.jpg",
-      location: "Reykjavik, Islande",
-      time: "Il y a 6h",
-      likes: 45,
-      comments: 8,
-      shares: 12,
-      tags: ["#Islande", "#Roadtrip", "#AuroreBoreale", "#Nature"],
-      liked: false,
-      saved: false,
-    },
   ];
+
+  // Sponsored post data
+  const sponsoredHotel = {
+    hotel: {
+      name: "Hôtel Sakamanga",
+      avatar: "/placeholder-sakamanga.jpg",
+      verified: true,
+      location: "Antananarivo, Madagascar",
+    },
+    content: "Découvrez notre offre spéciale pour les fêtes ! Séjour de rêve au cœur de Tana avec petit-déjeuner inclus et spa gratuit 🏨✨",
+    image: "/placeholder-sakamanga-room.jpg",
+    offer: {
+      price: "120 000 Ar",
+      originalPrice: "180 000 Ar",
+      type: "nuit",
+    },
+    rating: 4.8,
+    reviews: 245,
+    time: "Sponsorisé",
+    likes: 45,
+    comments: 12,
+    shares: 8,
+    liked: false,
+    saved: false,
+  };
 
   const handleLike = (postId: number) => {
     // Logic to handle like action
@@ -94,7 +102,7 @@ const Feed = () => {
             </Avatar>
             <div className="flex-1 space-y-3">
               <Textarea
-                placeholder="Partagez votre aventure avec la communauté..."
+                placeholder="Partagez votre expérience à Madagascar avec la communauté..."
                 value={newPost}
                 onChange={(e) => setNewPost(e.target.value)}
                 className="border-none resize-none p-0 text-lg placeholder:text-muted-foreground focus-visible:ring-0"
@@ -131,7 +139,10 @@ const Feed = () => {
         </CardContent>
       </Card>
 
-      {/* Posts */}
+      {/* Sponsored Hotel Post */}
+      <SponsoredPost {...sponsoredHotel} />
+
+      {/* Regular Posts */}
       {posts.map((post) => (
         <Card key={post.id} className="overflow-hidden">
           <CardHeader className="pb-3">

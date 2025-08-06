@@ -6,79 +6,79 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const RightSidebar = () => {
   const trendingDestinations = [
-    { name: "Bali, Indonésie", posts: "2.4k posts", trend: "+12%" },
-    { name: "Kyoto, Japon", posts: "1.8k posts", trend: "+8%" },
-    { name: "Santorini, Grèce", posts: "1.5k posts", trend: "+15%" },
-    { name: "Patagonie, Chili", posts: "892 posts", trend: "+23%" },
-    { name: "Reykjavik, Islande", posts: "743 posts", trend: "+18%" },
+    { name: "Nosy Be", posts: "1.2k posts", trend: "+25%" },
+    { name: "Andasibe-Mantadia", posts: "892 posts", trend: "+18%" },
+    { name: "Avenue des Baobabs", posts: "756 posts", trend: "+32%" },
+    { name: "Tsingy de Bemaraha", posts: "645 posts", trend: "+15%" },
+    { name: "Île Sainte-Marie", posts: "523 posts", trend: "+28%" },
   ];
 
   const upcomingEvents = [
     {
-      title: "Festival des Lanternes - Chiang Mai",
-      date: "15 Nov 2024",
-      participants: 156,
-      type: "Événement"
+      title: "Festival Donia - Nosy Be",
+      date: "15 Déc 2024",
+      participants: 89,
+      type: "Festival"
     },
     {
-      title: "Groupe Randonnée - Mont Blanc",
-      date: "22 Nov 2024",
+      title: "Groupe Randonnée - Ankaratra",
+      date: "22 Déc 2024",
       participants: 24,
       type: "Groupe"
     },
     {
-      title: "Rencontre Voyageurs - Paris",
-      date: "28 Nov 2024",
-      participants: 89,
+      title: "Rencontre Voyageurs - Antananarivo",
+      date: "28 Déc 2024",
+      participants: 156,
       type: "Meetup"
     },
   ];
 
   const suggestedFriends = [
     {
-      name: "Emma Wilson",
-      location: "Londres, UK",
-      mutualFriends: 5,
-      avatar: "/placeholder-emma.jpg",
-      travelStyle: "Backpacker"
-    },
-    {
-      name: "Lucas Silva",
-      location: "São Paulo, Brésil",
-      mutualFriends: 3,
-      avatar: "/placeholder-lucas.jpg",
-      travelStyle: "Aventure"
-    },
-    {
-      name: "Yuki Tanaka",
-      location: "Osaka, Japon",
+      name: "Lanto Razafy",
+      location: "Fianarantsoa, Madagascar",
       mutualFriends: 8,
-      avatar: "/placeholder-yuki.jpg",
+      avatar: "/placeholder-lanto.jpg",
       travelStyle: "Culture"
+    },
+    {
+      name: "Naina Rakoto",
+      location: "Toamasina, Madagascar",
+      mutualFriends: 5,
+      avatar: "/placeholder-naina.jpg",
+      travelStyle: "Plages"
+    },
+    {
+      name: "Tahiry Andry",
+      location: "Mahajanga, Madagascar",
+      mutualFriends: 3,
+      avatar: "/placeholder-tahiry.jpg",
+      travelStyle: "Aventure"
     },
   ];
 
   const recommendedPlaces = [
     {
-      name: "Restaurant Sukiyabashi Jiro",
-      location: "Tokyo, Japon",
-      rating: 4.9,
-      category: "Restaurant",
-      reviews: 847
-    },
-    {
-      name: "Hostel Generator",
-      location: "Berlin, Allemagne",
-      rating: 4.6,
-      category: "Hébergement",
-      reviews: 1234
-    },
-    {
-      name: "Musée du Louvre",
-      location: "Paris, France",
+      name: "Hôtel Sakamanga",
+      location: "Antananarivo, Madagascar",
       rating: 4.8,
+      category: "Hôtel",
+      reviews: 245
+    },
+    {
+      name: "Ravintsara Wellness Hotel",
+      location: "Andasibe, Madagascar",
+      rating: 4.6,
+      category: "Éco-lodge",
+      reviews: 167
+    },
+    {
+      name: "Parc National Andasibe",
+      location: "Andasibe, Madagascar",
+      rating: 4.9,
       category: "Attraction",
-      reviews: 5678
+      reviews: 892
     },
   ];
 

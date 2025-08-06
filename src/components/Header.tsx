@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Badge } from "@/components/ui/badge";
-import diakoLogo from "@/assets/diako-logo.png";
+import diakoLogo from "/lovable-uploads/ca0b85d9-e1c0-407d-ac37-0335101846a0.png";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -29,7 +29,7 @@ const Header = () => {
           <div className="relative max-w-md flex-1">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
             <Input
-              placeholder="Rechercher des destinations, voyageurs..."
+              placeholder="Rechercher des lieux, hôtels, expériences à Madagascar..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-10 bg-secondary border-none"
@@ -43,7 +43,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center gap-1">
             <Button variant="ghost" size="sm" className="flex items-center gap-2">
               <Globe className="w-4 h-4" />
-              <span>Destinations</span>
+              <span>Madagascar</span>
             </Button>
           </div>
 
@@ -64,15 +64,15 @@ const Header = () => {
               <div className="p-2">
                 <div className="space-y-2">
                   <div className="p-2 hover:bg-muted rounded text-sm">
-                    <p><strong>Marie Dubois</strong> a aimé votre photo de Tokyo</p>
-                    <p className="text-muted-foreground text-xs">Il y a 2h</p>
+                    <p><strong>Hôtel Sakamanga</strong> a publié une nouvelle offre</p>
+                    <p className="text-muted-foreground text-xs">Il y a 1h</p>
                   </div>
                   <div className="p-2 hover:bg-muted rounded text-sm">
-                    <p><strong>Alex Martin</strong> a commenté votre voyage en Thaïlande</p>
-                    <p className="text-muted-foreground text-xs">Il y a 4h</p>
+                    <p><strong>Miora Rakoto</strong> a partagé son séjour à Nosy Be</p>
+                    <p className="text-muted-foreground text-xs">Il y a 3h</p>
                   </div>
                   <div className="p-2 hover:bg-muted rounded text-sm">
-                    <p>Nouvelles recommandations pour <strong>Bali</strong></p>
+                    <p>Nouvelles recommandations pour <strong>Andasibe</strong></p>
                     <p className="text-muted-foreground text-xs">Il y a 1j</p>
                   </div>
                 </div>

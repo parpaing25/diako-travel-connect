@@ -8,24 +8,24 @@ const Sidebar = () => {
   const menuItems = [
     { icon: Home, label: "Accueil", active: true },
     { icon: Users, label: "Amis", badge: "5" },
-    { icon: MapPin, label: "Destinations" },
+    { icon: MapPin, label: "Lieux Madagascar" },
     { icon: Calendar, label: "Mes voyages" },
     { icon: Camera, label: "Mes albums" },
     { icon: Bookmark, label: "Sauvegardés" },
     { icon: MessageSquare, label: "Messages", badge: "2" },
-    { icon: TrendingUp, label: "Tendances" },
+    { icon: TrendingUp, label: "Tendances Mada" },
   ];
 
   const quickAccess = [
-    { name: "Paris", type: "Destination", image: "/placeholder-paris.jpg" },
-    { name: "Voyage Japon 2024", type: "Album", image: "/placeholder-japan.jpg" },
-    { name: "Randonnée Alpes", type: "Groupe", image: "/placeholder-alps.jpg" },
+    { name: "Antananarivo", type: "Destination", image: "/placeholder-tana.jpg" },
+    { name: "Voyage Nosy Be 2024", type: "Album", image: "/placeholder-nosybe.jpg" },
+    { name: "Randonneurs Mada", type: "Groupe", image: "/placeholder-hiking.jpg" },
   ];
 
   const onlineFriends = [
-    { name: "Marie Dubois", status: "En ligne", avatar: "/placeholder-marie.jpg" },
-    { name: "Alex Martin", status: "En ligne", avatar: "/placeholder-alex.jpg" },
-    { name: "Sophie Chen", status: "En ligne", avatar: "/placeholder-sophie.jpg" },
+    { name: "Miora Rakoto", status: "En ligne", avatar: "/placeholder-miora.jpg" },
+    { name: "Hery Andrianaivo", status: "En ligne", avatar: "/placeholder-hery.jpg" },
+    { name: "Farah Razafy", status: "En ligne", avatar: "/placeholder-farah.jpg" },
   ];
 
   return (
