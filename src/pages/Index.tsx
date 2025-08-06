@@ -1,11 +1,23 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Header from "@/components/Header";
+import Sidebar from "@/components/Sidebar";
+import Feed from "@/components/Feed";
+import RightSidebar from "@/components/RightSidebar";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-background">
+      <Header />
+      
+      <div className="flex">
+        <Sidebar />
+        
+        <main className="flex-1 lg:ml-[var(--sidebar-width)] xl:mr-80 pt-[var(--header-height)]">
+          <div className="p-6">
+            <Feed />
+          </div>
+        </main>
+        
+        <RightSidebar />
       </div>
     </div>
   );
