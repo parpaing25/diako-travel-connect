@@ -1,19 +1,22 @@
 import { Home, Users, MapPin, Calendar, Bookmark, Camera, MessageSquare, TrendingUp, Phone } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 
 const Sidebar = () => {
+  // Define navigation items with their corresponding routes. The
+  // `path` property is used to determine active state and to
+  // generate links via react-router.
   const menuItems = [
-    { icon: Home, label: "Accueil", active: true },
-    { icon: Users, label: "Amis", badge: "5" },
-    { icon: MapPin, label: "Lieux Madagascar" },
-    { icon: Calendar, label: "Mes voyages" },
-    { icon: Camera, label: "Mes albums" },
-    { icon: Bookmark, label: "Sauvegardés" },
-    { icon: MessageSquare, label: "Messages", badge: "2" },
-    { icon: TrendingUp, label: "Tendances Mada" },
+    { icon: Home, label: "Accueil", path: "/" },
+    { icon: Users, label: "Groupes", path: "/groups" },
+    { icon: Calendar, label: "Événements", path: "/events" },
+    { icon: MapPin, label: "Crédits", path: "/credits" },
+    { icon: Bookmark, label: "Vérification", path: "/verify" },
+    { icon: MessageSquare, label: "Retrait", path: "/withdraw" },
+    { icon: TrendingUp, label: "Booster", path: "/boost" },
   ];
 
   const quickAccess = [
@@ -28,25 +31,28 @@ const Sidebar = () => {
     { name: "Farah Razafy", status: "En ligne", avatar: "/placeholder-farah.jpg" },
   ];
 
+  const location = useLocation();
+
   return (
     <aside className="fixed left-0 top-[var(--header-height)] h-[calc(100vh-var(--header-height))] w-[var(--sidebar-width)] bg-card border-r border-border overflow-y-auto hidden lg:block">
       <div className="p-4 space-y-6">
         {/* Navigation Menu */}
         <nav className="space-y-1">
           {menuItems.map((item) => (
-            <Button
-              key={item.label}
-              variant={item.active ? "secondary" : "ghost"}
-              className="w-full justify-start gap-3 h-10"
-            >
-              <item.icon className="w-5 h-5" />
-              <span className="flex-1 text-left">{item.label}</span>
-              {item.badge && (
-                <Badge variant="secondary" className="ml-auto">
-                  {item.badge}
-                </Badge>
-              )}
-            </Button>
+            <Link key={item.label} to={item.path} className="block">
+              <Button
+                variant={location.pathname === item.path ? "secondary" : "ghost"}
+                className="w-full justify-start gap-3 h-10"
+              >
+                <item.icon className="w-5 h-5" />
+                <span className="flex-1 text-left">{item.label}</span>
+                {item.badge && (
+                  <Badge variant="secondary" className="ml-auto">
+                    {item.badge}
+                  </Badge>
+                )}
+              </Button>
+            </Link>
           ))}
         </nav>
 

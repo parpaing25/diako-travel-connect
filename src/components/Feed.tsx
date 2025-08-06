@@ -12,8 +12,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import SponsoredPost from "./SponsoredPost";
+import { useUser } from "../contexts/UserContext";
 
 const Feed = () => {
+  // Access user context to award credits on interactions
+  const { addCredits } = useUser();
   const [newPost, setNewPost] = useState("");
 
   const posts = [
@@ -83,11 +86,19 @@ const Feed = () => {
   const handleLike = (postId: number) => {
     // Logic to handle like action
     console.log(`Liked post ${postId}`);
+    // Award 1 credit to the user when they like a post
+    addCredits(1);
   };
 
   const handleSave = (postId: number) => {
     // Logic to handle save action
     console.log(`Saved post ${postId}`);
+  };
+
+  // Handle share action; award 2 credits
+  const handleShare = (postId: number) => {
+    console.log(`Shared post ${postId}`);
+    addCredits(2);
   };
 
   return (
@@ -231,7 +242,12 @@ const Feed = () => {
                   <MessageCircle className="w-4 h-4" />
                   Commenter
                 </Button>
-                <Button variant="ghost" size="sm" className="flex-1 gap-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="flex-1 gap-2"
+                  onClick={() => handleShare(post.id)}
+                >
                   <Share2 className="w-4 h-4" />
                   Partager
                 </Button>
